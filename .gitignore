@@ -1,2 +1,3 @@
 .git.nosync
 **/*.ignore*
+node_modules

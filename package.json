@@ -1,0 +1,23 @@
+{
+  "name": "coding-style-guide",
+  "version": "0.0.1",
+  "description": "前端团队代码约定",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "release": "npm run build"
+  },
+  "repository": {},
+  "author": "mayueyue",
+  "dependencies": {
+    "element-ui": "^2.14.1",
+    "vuepress": "^1.7.1"
+  },
+  "devDependencies": {
+    "less": "^4.0.0",
+    "less-loader": "^7.2.0"
+  }
+}
