@@ -4,11 +4,11 @@
   "description": "前端团队代码约定",
   "main": "index.js",
   "directories": {
-    "doc": "docs"
+    "doc": "."
   },
   "scripts": {
-    "dev": "vuepress dev docs",
-    "release": "npm run build"
+    "dev": "vuepress dev md",
+    "release": "vuepress build md"
   },
   "repository": {},
   "author": "mayueyue",

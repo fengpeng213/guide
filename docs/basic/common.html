@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>公共基础 | Coding Style Guide</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/mayueyue-32.png">
+    <meta name="description" content="前端团队代码规范">
+    <meta name="keywords" content="代码规范前端团队，代码规范，前端代码规范，代码风格，代码约定，代码风格指引，前端编码风格指引">
+    
+    <link rel="preload" href="/assets/css/0.styles.1600aa64.css" as="style"><link rel="preload" href="/assets/js/app.4a565178.js" as="script"><link rel="preload" href="/assets/js/2.9a557daf.js" as="script"><link rel="preload" href="/assets/js/9.c89f59a1.js" as="script"><link rel="prefetch" href="/assets/js/10.18e0107f.js"><link rel="prefetch" href="/assets/js/11.8c0c2789.js"><link rel="prefetch" href="/assets/js/3.5c5e8e2d.js"><link rel="prefetch" href="/assets/js/4.605f6789.js"><link rel="prefetch" href="/assets/js/5.d7e83917.js"><link rel="prefetch" href="/assets/js/6.e53bb51f.js"><link rel="prefetch" href="/assets/js/7.95c76e3e.js"><link rel="prefetch" href="/assets/js/8.b31e23b9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1600aa64.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/mayueyue.png" alt="Coding Style Guide" class="logo"> <span class="site-name can-hide">Coding Style Guide</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>基础约定</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic/common.html" aria-current="page" class="active sidebar-link">公共基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic/common.html#分号" class="sidebar-link">分号</a></li><li class="sidebar-sub-header"><a href="/basic/common.html#缩进" class="sidebar-link">缩进</a></li><li class="sidebar-sub-header"><a href="/basic/common.html#块标识" class="sidebar-link">块标识</a></li><li class="sidebar-sub-header"><a href="/basic/common.html#下划线" class="sidebar-link">下划线</a></li><li class="sidebar-sub-header"><a href="/basic/common.html#大写字母" class="sidebar-link">大写字母</a></li><li class="sidebar-sub-header"><a href="/basic/common.html#中文拼音" class="sidebar-link">中文拼音</a></li></ul></li><li><a href="/basic/naming.html" class="sidebar-link">命名扯皮</a></li><li><a href="/basic/css.html" class="sidebar-link">CSS</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>进阶知识</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>避开坑洼</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>上手训练</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>悟到了吗</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="公共基础"><a href="#公共基础" class="header-anchor">#</a> 公共基础</h1> <p>描述公共的约定，基本上是“龟腚”</p> <h2 id="分号"><a href="#分号" class="header-anchor">#</a> 分号</h2> <p>一句话，推荐使用分号，底线是统一使用或者统一不使用。</p> <p>可分级别实现统一，比如工程级统一，团队级统一。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'yueyue'</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token number">25</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="缩进"><a href="#缩进" class="header-anchor">#</a> 缩进</h2> <p>使用空格，tab设置转换，缩进统一为2空格或4空格</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="块标识"><a href="#块标识" class="header-anchor">#</a> 块标识</h2> <p>使用{}作为块标识</p> <div class="language-scss extra-class"><pre class="language-scss"><code>.wrapper
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  .name
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  .age
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+
+<span class="token comment">// 采用</span>
+<span class="token selector">.wrapper </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token selector">.name </span><span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 16px<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="下划线"><a href="#下划线" class="header-anchor">#</a> 下划线</h2> <p>下划线 <code>_</code> ，明确用来表现一些”内部“，”私有“，”局部“ 的含义，如内部文件，内部变量。</p> <p>文件，文件夹，URL的命名，尽量采用中划线 <code>-</code>。</p> <p>使用 <code>_</code> 需要有明确的理由</p> <h2 id="大写字母"><a href="#大写字母" class="header-anchor">#</a> 大写字母</h2> <p>大写往往只在驼峰，类命名，常量等处用到，大写字母开头的场景较少</p> <p>使用 <strong>大写字母</strong> 开头 需要有明确的理由</p> <h2 id="中文拼音"><a href="#中文拼音" class="header-anchor">#</a> 中文拼音</h2> <p>一般情况下禁止使用中文拼音</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/basic/naming.html">
+        命名扯皮
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.4a565178.js" defer></script><script src="/assets/js/2.9a557daf.js" defer></script><script src="/assets/js/9.c89f59a1.js" defer></script>
+  </body>
+</html>

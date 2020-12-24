@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CSS | Coding Style Guide</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/mayueyue-32.png">
+    <meta name="description" content="前端团队代码规范">
+    <meta name="keywords" content="代码规范前端团队，代码规范，前端代码规范，代码风格，代码约定，代码风格指引，前端编码风格指引">
+    
+    <link rel="preload" href="/assets/css/0.styles.1600aa64.css" as="style"><link rel="preload" href="/assets/js/app.4a565178.js" as="script"><link rel="preload" href="/assets/js/2.9a557daf.js" as="script"><link rel="preload" href="/assets/js/10.18e0107f.js" as="script"><link rel="prefetch" href="/assets/js/11.8c0c2789.js"><link rel="prefetch" href="/assets/js/3.5c5e8e2d.js"><link rel="prefetch" href="/assets/js/4.605f6789.js"><link rel="prefetch" href="/assets/js/5.d7e83917.js"><link rel="prefetch" href="/assets/js/6.e53bb51f.js"><link rel="prefetch" href="/assets/js/7.95c76e3e.js"><link rel="prefetch" href="/assets/js/8.b31e23b9.js"><link rel="prefetch" href="/assets/js/9.c89f59a1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1600aa64.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/mayueyue.png" alt="Coding Style Guide" class="logo"> <span class="site-name can-hide">Coding Style Guide</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>基础约定</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic/common.html" class="sidebar-link">公共基础</a></li><li><a href="/basic/naming.html" class="sidebar-link">命名扯皮</a></li><li><a href="/basic/css.html" aria-current="page" class="active sidebar-link">CSS</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic/css.html#基本约定" class="sidebar-link">基本约定</a></li><li class="sidebar-sub-header"><a href="/basic/css.html#关于嵌套" class="sidebar-link">关于嵌套</a></li><li class="sidebar-sub-header"><a href="/basic/css.html#scoped" class="sidebar-link">scoped</a></li><li class="sidebar-sub-header"><a href="/basic/css.html#命名scoped" class="sidebar-link">命名scoped</a></li><li class="sidebar-sub-header"><a href="/basic/css.html#属性顺序" class="sidebar-link">属性顺序</a></li><li class="sidebar-sub-header"><a href="/basic/css.html#减少嵌套" class="sidebar-link">减少嵌套</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>进阶知识</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>避开坑洼</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>上手训练</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>悟到了吗</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="css"><a href="#css" class="header-anchor">#</a> CSS</h1> <p>CSS的知识，只讲那些重要的部分</p> <h2 id="基本约定"><a href="#基本约定" class="header-anchor">#</a> 基本约定</h2> <p>基本的规则，分必要和次要</p> <h4 id="必要约定"><a href="#必要约定" class="header-anchor">#</a> 必要约定</h4> <p><strong>id</strong>：小驼峰，少用，明确需要且适宜后用，不能接受 <code>logo-wrapper</code>这样格式的命名作为id</p> <p><strong>class命名</strong>：字母加中划线，不要使用驼峰，不要数字开头，不要下划线</p> <p><strong>缩进</strong>：统一使用2格缩进（或4），不管有无大括号，都应当缩进对齐</p> <p><strong>id不要嵌套</strong>：id要注意其唯一性，没有必要写到嵌套里面徒增大小</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token comment">// good</span>
+<span class="token selector">#userId </span><span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.logo-wrapper </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token comment">// bad</span>
+<span class="token selector">#user-id </span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.logo-wrapper </span><span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+
+  <span class="token comment">// bad</span>
+  <span class="token selector">#userName </span><span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h4 id="次要约定"><a href="#次要约定" class="header-anchor">#</a> 次要约定</h4> <p>视团队情况具体执行，不强求</p> <p><strong>括号</strong>：推荐使用大括号来表示层级关系</p> <p><strong>分号</strong>：建议使用分号来结束，这个次要中的次要</p> <p>来个标准示例</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.listing</span> <span class="token punctuation">{</span> <span class="token comment">/* 使用大括号，{ 之前有空格 */</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 18px<span class="token punctuation">;</span> <span class="token comment">/* 两个空格缩进，:后面有空格，带分号 */</span>
+  <span class="token property">line-height</span><span class="token punctuation">:</span> 1.2<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 一行一个别名 */</span>
+<span class="token selector">.one,
+.selector,
+.per-line</span> <span class="token punctuation">{</span>
+  // ...
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="关于嵌套"><a href="#关于嵌套" class="header-anchor">#</a> 关于嵌套</h2> <p>使用less，scss等预处理语言，不要嵌套过深，层级深导致打包过大，看下面的这个例子真切感受下</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.page-container-wrapper </span><span class="token punctuation">{</span>
+  <span class="token selector">.main-content </span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 1260px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 50px auto 20px<span class="token punctuation">;</span>
+    <span class="token comment">/* 省略 */</span>
+    <span class="token selector">.tips-wrapper </span><span class="token punctuation">{</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> 90px<span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 1260px<span class="token punctuation">;</span>
+      <span class="token comment">/* 省略 */</span>
+      <span class="token selector">.title </span><span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 699px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 66px<span class="token punctuation">;</span>
+        <span class="token comment">/* 省略 */</span>
+        <span class="token selector">.icon </span><span class="token punctuation">{</span>
+          <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>转换后</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">.page-container-wrapper .main-content</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1260px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 50px auto 20px<span class="token punctuation">;</span>
+  <span class="token comment">/* 省略 */</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.page-container-wrapper .main-content .tips-wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 90px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1260px<span class="token punctuation">;</span>
+  <span class="token comment">/* 省略 */</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.page-container-wrapper .main-content .tips-wrapper .title</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 699px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 66px<span class="token punctuation">;</span>
+  <span class="token comment">/* 省略 */</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.page-container-wrapper .main-content .tips-wrapper .title .icon</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>所谓的“过深”是一个模糊的形容，什么才叫过深？参考值是3层，对于像Vue的SFC文件中style的定义，通过添加scoped，已经实现了作用域的限定，一定程度的“扁平化”并不会丢失或被覆盖。</p> <p><em>这里有个考虑，过深这个形容是模糊的，而扁平的程度也是模糊的，要扁平到什么程度呢？而且扁平后也会丢失一部分层级信息，如何取舍衡量，留给读者去思考</em></p> <h2 id="scoped"><a href="#scoped" class="header-anchor">#</a> scoped</h2> <p>在Vue SFC等类似的场景中，推荐使用scoped，使用相应的loader去添加作用范围限制</p> <h4 id="一个真实问题场景"><a href="#一个真实问题场景" class="header-anchor">#</a> 一个真实问题场景</h4> <p>如下，B组件是从A组件拷贝过来做了一些拓展的，两个组件使用了相同的class name，但都没有用scoped，
+这个时候问题就来了 ——</p> <p><strong>如果页面同时加载了两个组件的style，则要么A影响了B，要么B影响了A</strong></p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- in A.vue component --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.header-wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1080px<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- in B.vue component --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>scss<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.header-wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1200px<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>请注意 <strong>scoped 不是 scope!</strong></p> <h2 id="命名scoped"><a href="#命名scoped" class="header-anchor">#</a> 命名scoped</h2> <p>使用预处理器时，组件顶层元素的class name命名本身就是一个“scoped”</p> <p>想强调的一点 —— 对于那些需要公用的样式，尤其是那些”无法添加“scoped的，比如你写一小段公共的代码，通过npm包的方式添加到多个工程，那么你要注意，使你的命名具备足够的特殊性，能够<strong>自成scoped</strong>。</p> <p>举例如下，如果命名成下面这样，或许早晚或者中午就会出问题</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>cookie-policy<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- 省略 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>而如果是这样，就不可能出问题了</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>commonCookiePolicyPopupWrapperMyy<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- 省略 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>我这里其实加了一个 <code>Myy</code> 后缀，这里其实想表达的意思，是可以在表意的名称之外，添加一些额外的前后缀，来确保绝无可能重复。</p> <h2 id="属性顺序"><a href="#属性顺序" class="header-anchor">#</a> 属性顺序</h2> <p>属性有顺序是提高可读性的一个较为有用的策略。</p> <p>并不是说要死死规定每个属性的顺序，那样的要求不具备可行性，（即使有工具能自动处理，大家也不会愿意用，给人的压迫感太强，且收益甚慰），大家都是打工人，认不清身份吗要这样做zibenjia的事</p> <p>就两个具体要求</p> <ul><li>属性分类，不同类别之间遵循大概的先后逻辑；</li> <li>同一个类别的属性，写到一起；</li></ul> <p>一个参考顺序如下，就是先确定与外部的关系，然后再处理自身内部的事情</p> <div class="language-text extra-class"><pre class="language-text"><code>1. position，display (找到位置)
+2. width, height等尺寸 (占多大地方)
+3. margin, padding等间距（确认距离）
+4. 边框，背景 (划定边界标记)
+5. 字体，颜色（整理衣着)
+6. 其他
+</code></pre></div><p>可以不完全按照这个顺序，比如说你就是喜欢把尺寸放在前面，display放后面，都OK的，最基本的要求，请把一类的属性写到一起。</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token comment">/* bad case 这样凌乱的会让人也很凌乱吧？不要说例子太过极端，真的有类似的 😂 */</span>
+<span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'roboto-regular'</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #f85415<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* good case 这样是不是就清晰多了呢 😌 */</span>
+<span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+
+  <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+  <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+
+  <span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'roboto-regular'</span><span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> #f85415<span class="token punctuation">;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="减少嵌套"><a href="#减少嵌套" class="header-anchor">#</a> 减少嵌套</h2> <p>大家都没有在意这个点，但真的是嵌套太多了，大家在开发的过程中，真的可以有意识地去思考，如何能够减少一些嵌套。</p> <div class="language-scss extra-class"><pre class="language-scss"><code><span class="token selector">.certificate-classroom-wrapper </span><span class="token punctuation">{</span>
+  <span class="token selector">.main-content </span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 1260px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 50px auto 20px<span class="token punctuation">;</span>
+    <span class="token comment">/* 省略 */</span>
+    <span class="token selector">.ppt-tips-wrapper </span><span class="token punctuation">{</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> 90px<span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span> 1260px<span class="token punctuation">;</span>
+      <span class="token comment">/* 省略 */</span>
+      <span class="token selector">.text </span><span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 699px<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 66px<span class="token punctuation">;</span>
+        <span class="token comment">/* 省略 */</span>
+        <span class="token selector">.title </span><span class="token punctuation">{</span>
+          <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/basic/naming.html" class="prev">
+        命名扯皮
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.4a565178.js" defer></script><script src="/assets/js/2.9a557daf.js" defer></script><script src="/assets/js/10.18e0107f.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>命名扯皮 | Coding Style Guide</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/mayueyue-32.png">
+    <meta name="description" content="前端团队代码规范">
+    <meta name="keywords" content="代码规范前端团队，代码规范，前端代码规范，代码风格，代码约定，代码风格指引，前端编码风格指引">
+    
+    <link rel="preload" href="/assets/css/0.styles.1600aa64.css" as="style"><link rel="preload" href="/assets/js/app.4a565178.js" as="script"><link rel="preload" href="/assets/js/2.9a557daf.js" as="script"><link rel="preload" href="/assets/js/11.8c0c2789.js" as="script"><link rel="prefetch" href="/assets/js/10.18e0107f.js"><link rel="prefetch" href="/assets/js/3.5c5e8e2d.js"><link rel="prefetch" href="/assets/js/4.605f6789.js"><link rel="prefetch" href="/assets/js/5.d7e83917.js"><link rel="prefetch" href="/assets/js/6.e53bb51f.js"><link rel="prefetch" href="/assets/js/7.95c76e3e.js"><link rel="prefetch" href="/assets/js/8.b31e23b9.js"><link rel="prefetch" href="/assets/js/9.c89f59a1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1600aa64.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/mayueyue.png" alt="Coding Style Guide" class="logo"> <span class="site-name can-hide">Coding Style Guide</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>基础约定</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basic/common.html" class="sidebar-link">公共基础</a></li><li><a href="/basic/naming.html" aria-current="page" class="active sidebar-link">命名扯皮</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basic/naming.html#工程及文件" class="sidebar-link">工程及文件</a></li><li class="sidebar-sub-header"><a href="/basic/naming.html#类和常量" class="sidebar-link">类和常量</a></li><li class="sidebar-sub-header"><a href="/basic/naming.html#变量命名" class="sidebar-link">变量命名</a></li><li class="sidebar-sub-header"><a href="/basic/naming.html#函数命名" class="sidebar-link">函数命名</a></li><li class="sidebar-sub-header"><a href="/basic/naming.html#关于表意" class="sidebar-link">关于表意</a></li><li class="sidebar-sub-header"><a href="/basic/naming.html#命名前缀" class="sidebar-link">命名前缀</a></li><li class="sidebar-sub-header"><a href="/basic/naming.html#临时变量" class="sidebar-link">临时变量</a></li></ul></li><li><a href="/basic/css.html" class="sidebar-link">CSS</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>进阶知识</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>避开坑洼</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>上手训练</span> <!----></p> <!----></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>悟到了吗</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="命名扯皮"><a href="#命名扯皮" class="header-anchor">#</a> 命名扯皮</h1> <p>命名是那类很难的问题 —— 有认知差距，但没有进入壁垒。如八卦问题一样，每个人都想发表自己的看法，而不像核问题一样，大家都谨慎发表，听专家的。</p> <p>力不足者，中道而废，讲不清楚全部就讲能讲清楚的部分，讲不完怎么做是对的就讲怎么做是不对的。</p> <p><strong>命名的核心目标就一个词概括 —— 简明，简单但明确地表示其代表的意义</strong></p> <h2 id="工程及文件"><a href="#工程及文件" class="header-anchor">#</a> 工程及文件</h2> <h4 id="工程"><a href="#工程" class="header-anchor">#</a> 工程</h4> <p>体现包含的业务，能够从名称了解到它代表着什么</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># bad</span>
+zifeiyu <span class="token punctuation">(</span>子非鱼，这个是纯粹个人爱好了<span class="token punctuation">)</span>
+
+<span class="token comment"># good</span>
+advertising
+</code></pre></div><p>看情况，公共的内容最好能够少一些”自以为有趣“，<del>像我这个文档，如果用在团队中就适合少一些骚话</del></p> <h4 id="文件"><a href="#文件" class="header-anchor">#</a> 文件</h4> <p>规则：小写字母开头，只包含小写字母和数字，使用中划线 <strong>-</strong> 连接
+特殊：内部文件可以使用下划线 <strong>_</strong> 开头，如 <strong>_api.js</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># bad case</span>
+order_list
+  ├── personal_order_list.vue
+  └── order_detail.vue
+
+<span class="token comment"># good case</span>
+order-list
+  ├── personal-order-list.vue
+  └── order-detail.vue
+</code></pre></div><h2 id="类和常量"><a href="#类和常量" class="header-anchor">#</a> 类和常量</h2> <p>类和常量是大写字母开头的命名</p> <h4 id="类命名"><a href="#类命名" class="header-anchor">#</a> 类命名</h4> <p>约定俗成类名大驼峰</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">SuperPerson</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SubPerson</span> <span class="token keyword">extends</span> <span class="token class-name">SuperPerson</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="常量"><a href="#常量" class="header-anchor">#</a> 常量</h4> <p>”常量全大写“大家都知道，但需要说明的是</p> <p>这里的 <strong>常量</strong> 不等于 <strong>所有用const声明的”常量“</strong></p> <p>常量分两类：公共常量和局部常量</p> <h4 id="共用常量"><a href="#共用常量" class="header-anchor">#</a> 共用常量</h4> <p>不仅仅表示不能改变，还代表了其公共特点，一般写在独立文件，单独配置中，这类采用<strong>全大写加下划线</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * 用户xxx订单审核的状态
+ * 审核说明：....
+ */</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ORDER_AUDIT_STATUS_FAIL</span> <span class="token operator">=</span> <span class="token string">'FAIL'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">ORDER_AUDIT_STATUS_PASS</span> <span class="token operator">=</span> <span class="token string">'PASS'</span><span class="token punctuation">;</span>
+</code></pre></div><p>公共常量命名虽然本身表意，但可以添加一些注释补充描述其业务意义及一些内在依赖，逻辑。因为命名过于具体则太长，而在集中管理的前提下，通过统一注释来补充说明避免命名过长，也是一种可以采用的策略。</p> <h4 id="局部常量"><a href="#局部常量" class="header-anchor">#</a> 局部常量</h4> <p>仅仅是局部使用，只是用来明确使用中不会，不应该被改变的值或引用，没有左值操作，这类常量，就不一定要全大写，可以跟普通变量一样，小驼峰即可，<strong>如果局部常量也全大写，那么就无法与公共常量有效区分</strong>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> prefix <span class="token operator">=</span> <span class="token string">'myy-'</span><span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="变量命名"><a href="#变量命名" class="header-anchor">#</a> 变量命名</h2> <p>变量命名使用小驼峰，内部使用的一些特殊变量，辅助属性可以用<code>_</code>开头</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> userName <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> teacherId <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 辅助属性示意
+ * @param {Object} order 订单描述对象
+ */</span>
+<span class="token keyword">function</span> <span class="token function">normalizeOrder</span><span class="token punctuation">(</span><span class="token parameter">order</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span>order<span class="token punctuation">,</span>
+    _checked<span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="函数命名"><a href="#函数命名" class="header-anchor">#</a> 函数命名</h2> <p>普通函数小驼峰，构造函数大驼峰</p> <p>虽然说构造函数还是普通函数，仅仅是取决于我们的使用，跟定义没有关系，但是约定俗成，对于需要作为构造函数使用的，按照大驼峰来命名吧。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 普通函数</span>
+<span class="token keyword">function</span> <span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 构造函数</span>
+<span class="token keyword">function</span> <span class="token function">SuperPerson</span><span class="token punctuation">(</span><span class="token parameter">options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="关于表意"><a href="#关于表意" class="header-anchor">#</a> 关于表意</h2> <p>表意，就是要用相关的英文单词来描述变量的意义，怎样才算达意，实在是难以说得清清楚楚的词，
+下面我将描述一些基本原则。</p> <h2 id="命名前缀"><a href="#命名前缀" class="header-anchor">#</a> 命名前缀</h2> <p>前缀用什么，动词开头，名词开头还是怎么样？</p> <p>is是用在函数方法上还是普通变量值上？</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// is前缀命名变量</span>
+<span class="token keyword">let</span> isReady <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+<span class="token comment">// is前缀命名函数</span>
+<span class="token keyword">function</span> <span class="token function">isReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="is前缀"><a href="#is前缀" class="header-anchor">#</a> is前缀</h4> <p>根据我的经验，强求<code>is</code>只能用在属性大家(包括我)实在是难以接受</p> <p>我的方案是 —— is用在方法还是属性，这随你喜欢，爱咋用咋用。</p> <p>但是，<strong>is意味着一个Boolean，请务必遵守</strong>，我不管你用作属性还是函数，起码你得返回一个Boolean，像下面这样算怎么回事，你is啥，is个锤子啊</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// is前缀命名一个Boolean变量</span>
+<span class="token keyword">const</span> isReady <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 返回个字符串你is个锤子啊</span>
+<span class="token keyword">function</span> <span class="token function">isYueyue</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token keyword">return</span> <span class="token string">'yueyue'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><code>if</code> 前缀也是一样的，<strong>如果前缀明确意味着期望某种类型，你就要返回对应的类型</strong></p> <h4 id="get前缀"><a href="#get前缀" class="header-anchor">#</a> get前缀</h4> <p>get表示动作，就安心用在方法命名吧，用作属性真不合适。</p> <p>我遇到过，确认过眼神，一脸懵逼。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    getCounts<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token comment">// 就很崩溃，你一个属性名你get啥啊get</span>
+    getReady<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 用来表述状态，貌似还有点道理，但用is不香吗</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h4> <p>举一隅不以三隅反，则不复也，让我们表里如一，让动词执行一个动作，让Boolean返回Boolean。</p> <h2 id="临时变量"><a href="#临时变量" class="header-anchor">#</a> 临时变量</h2> <p>我们经常会使用到临时变量，像temp, retVal, obj这些，需要提醒的是</p> <p><strong>临时变量，请不要失去其临时性，而临时性，不是指就在几行代码之间使用，而是它本身没有，也不需要表示什么明确意义</strong>，</p> <p>下面这样用temp合适，这个变量唯一的目的就是临时存储</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  temp <span class="token operator">=</span> right<span class="token punctuation">;</span>
+  right <span class="token operator">=</span> left<span class="token punctuation">;</span>
+  left <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>但像下面这样的，这些取出来的值，是有明确的意义的，用a,b,c这种命名，我就很服气。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">getParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>orderDetail<span class="token punctuation">.</span>orderId <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>staffInfo<span class="token punctuation">.</span>id <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    orderId<span class="token operator">:</span> a<span class="token punctuation">,</span>
+    operatorId<span class="token operator">:</span> b
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这样它不香吗</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 这样它不香吗</span>
+<span class="token keyword">function</span> <span class="token function">getParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    orderId<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>orderDetail<span class="token punctuation">.</span>orderId <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    operatorId<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>staffInfo<span class="token punctuation">.</span>id <span class="token operator">||</span> <span class="token string">''</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/basic/common.html" class="prev">
+        公共基础
+      </a></span> <span class="next"><a href="/basic/css.html">
+        CSS
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.4a565178.js" defer></script><script src="/assets/js/2.9a557daf.js" defer></script><script src="/assets/js/11.8c0c2789.js" defer></script>
+  </body>
+</html>
