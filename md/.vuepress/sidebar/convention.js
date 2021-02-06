@@ -6,6 +6,7 @@ const zh = [
       'basic/common',
       'basic/naming',
       'basic/css',
+      'basic/javascript'
     ]
   },
   {
